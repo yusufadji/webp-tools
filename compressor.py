@@ -19,7 +19,7 @@ file_list = [file for file in os.listdir(orig_folder) if file.endswith((".jpg", 
 
 for file in file_list:
     input_path = os.path.join(orig_folder, file)
-    output_path = os.path.join(src_folder, file)
+    output_path = os.path.join(src_folder, os.path.splitext(file)[0] + ".webp")
 
 
     command = f"cwebp -q {compression_quality} {input_path} -o {output_path}"
